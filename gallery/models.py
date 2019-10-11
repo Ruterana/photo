@@ -30,3 +30,7 @@ class Image(models.Model):
         self.save()
     def delete_image(self):
         self.delete()
+    @classmethod
+    def image(cls):
+        image = cls.objects.all()
+        return image
