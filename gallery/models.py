@@ -13,6 +13,10 @@ class Category(models.Model):
         return self.category_name
     def save_category(self):
         self.save()
+    @classmethod
+    def search_by_category_name(cls,search_term):
+        category = cls.objects.filter(category_name__icontains=search_term)
+        return category
 class Image(models.Model):
     image_name= models.CharField(max_length=30)  
     image_description = models.TextField()

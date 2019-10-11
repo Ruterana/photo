@@ -1,0 +1,23 @@
+{%extends 'all_photos/base.html'%}
+
+
+{% block content %}
+{{block.super}}
+{% for photo in photos %}
+
+  <div class="row">
+    <!-- displaying News articles -->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <h2 class="text-center"> {{ photo.image_name }} </h2>
+      <h2 class="text-center"> {{ photo.image_description}} </h2>
+    </div>
+
+    <!--Display images  -->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <img src="{{image_path.url}}" class="img-responsive" alt="Image">
+      </div>
+
+  </div>
+  {%endfor%}
+{% endblock %}
+

@@ -6,9 +6,9 @@
   <meta charset="utf-8">
 
   {% if title %}
-  <title>This is photoGallery {{title}}</title>
+  <title>Welcome to  photoGallery {{title}}</title>
   {% else %}
-    <title> This is photoGallery </title>
+    <title> Welcome to photoGallery </title>
   {% endif %}
 
   {% block styles %}
@@ -21,9 +21,10 @@
     {% include "navbar.html" %}
 
     {% block scripts %}
-    {% block content %} <h1> This is photoGallery</h1> {%endblock%}
+    {% block content %} <h1>  Welcome to the photoGallery</h1> {%endblock%}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
      {% bootstrap_javascript %}
     {% endblock %}
+    
 </body>
 </html>
