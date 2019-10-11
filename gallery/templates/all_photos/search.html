@@ -14,9 +14,11 @@
   <div class="row">
 
   {% if image %}
-    {% for cat in image %}
+    {% for image in image %}
       <div class="col-sm-6 col-md-3">
-          <h1>{{cat.category}}</h1>
+          <h2>{{image.image_name}}</h2>
+          <img src="{{image.image_path.url}}" style="width:400px; height:400px;" alt="Image">
+      
       </div>
     {% endfor %}
   {% endif %}
