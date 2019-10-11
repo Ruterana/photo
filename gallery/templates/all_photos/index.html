@@ -6,22 +6,37 @@
 <div class="row">
   {% for pic in image %}
 
-
-  <!--Display images  -->
-  <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"><br> -->
-  <!-- <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 picture-card"><br> -->
   <div class="col-md-3">
-    <img style="width:300px; height: 300px;" src="{{pic.image_path.url}}" class="img-responsive" alt="Image">
-    <!-- <h2> name:{{ pic.image_name }} </h2>
-    <p> description:{{ pic.image_description}} </p>
-    <p>location:{{ pic.location }}</p>
-    <p>category:{{ pic.category}}</p> -->
+    <img style="width:300px; height: 300px;" src="{{pic.image_path.url}}" class="img-responsive" alt="Image"
+    class="img-thumbnail photo" alt="Image" data-toggle="modal" data-target="#{{pic.id}}">
+
+    <!-- Image Details modal -->
+    <div class="modal fade" id="{{pic.id}}" tabindex="-1" role="dialog" aria-labelledby="imageTitle" aria-hidden="true">
+      <div style="width:500px; height:500px; padding-top:100px;" class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+            <h5 class="modal-name" id="imageTitle">{{pic.name}}</h5>
+            <!-- </button> -->
+          </div>
+          <div class="modal-body">
+            <img src="{{pic.image_path.url}}" style="width:400px; height:400px;" alt="Image">
+            <br>
+            <h2> name:{{ pic.image_name }} </h2>
+            <p> description:{{ pic.image_description}} </p>
+            <p>location:{{ pic.location }}</p>
+            <p>category:{{ pic.category}}</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> -->
 
 
 
 
-{%endfor%}
+
+  {%endfor%}
 </div>
 {% endblock %}
