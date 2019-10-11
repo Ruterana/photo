@@ -13,15 +13,12 @@ class Category(models.Model):
         return self.category_name
     def save_category(self):
         self.save()
-    @classmethod
-    def search_by_category_name(cls,search_term):
-        category = cls.objects.filter(category_name__icontains=search_term)
-        return category
+   
 class Image(models.Model):
     image_name= models.CharField(max_length=30)  
     image_description = models.TextField()
     location = models.ForeignKey(Location)
-    category = models.ForeignKey(Category)
+    category = models.ForeignKey(Category,db_column="category_name")
     image_path = models.ImageField(upload_to = 'pictures/')
     def __str__(self):
         return self.image_name
@@ -34,3 +31,7 @@ class Image(models.Model):
     def image(cls):
         image = cls.objects.all()
         return image
+    @classmethod
+    def search_by_category_name(cls,search_term):
+        category= cls.objects.filter(category__category_name__contains=search_term)
+        return category
