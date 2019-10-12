@@ -20,9 +20,11 @@
             <!-- </button> -->
           </div>
           <div class="modal-body">
+              <h2> name:{{ pic.image_name }} </h2>
+              <hr>
             <img src="{{pic.image_path.url}}" style="width:400px; height:400px;" alt="Image">
             <br>
-            <h2> name:{{ pic.image_name }} </h2>
+            
             <p> description:{{ pic.image_description}} </p>
             <p>location:{{ pic.location }}</p>
             <p>category:{{ pic.category}}</p>
