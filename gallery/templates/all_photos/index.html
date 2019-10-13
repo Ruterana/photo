@@ -2,23 +2,14 @@
 
 
 {% block content %}
-<script>
-  function copyLink(image_name) {
-    console.log("copied");
-    var copyText = document.getElementById(image_name);
-    copyText.select();
-    document.execCommand("copy");
-    alert("Link copied to clipboard: " + copyText.value);
-  }
-  </script>
-  
+
 {{block.super}}
 <div class="row">
   {% for pic in image %}
 
   <div class="col-md-3">
-    <img style="width:300px; height: 300px;" src="{{pic.image_path.url}}" class="img-responsive" alt="Image"
-    class="img-thumbnail photo" alt="Image" data-toggle="modal" data-target="#{{pic.id}}">
+    <img style="width:300px; height: 300px;" src="{{pic.image_path.url}}" class="img-responsive" alt="Image" class="img-thumbnail photo"
+      alt="Image" data-toggle="modal" data-target="#{{pic.id}}">
 
     <!-- Image Details modal -->
     <div class="modal fade" id="{{pic.id}}" tabindex="-1" role="dialog" aria-labelledby="imageTitle" aria-hidden="true">
@@ -30,16 +21,20 @@
             <!-- </button> -->
           </div>
           <div class="modal-body">
-              <h2> name:{{ pic.image_name }} </h2>
-              <hr>
+            <h2> name:{{ pic.image_name }} </h2>
+            <hr>
             <img src="{{pic.image_path.url}}" style="width:400px; height:400px;" alt="Image">
             <br>
-            
+
             <p> description:{{ pic.image_description}} </p>
             <p>location:{{ pic.location }}</p>
             <p>category:{{ pic.category}}</p>
           </div>
+          <!-- The text field -->
+          <input type="link" value="http://127.0.0.1:8000/{{pic.image_path.url}}" id="myInput">
 
+          <!-- The button used to copy the text -->
+          <button onclick="copyLink()">Copy link</button>
         </div>
       </div>
     </div>
@@ -50,5 +45,17 @@
 
 
   {%endfor%}
+  
+  
 </div>
+<script>
+  function copyLink(image_name) {
+    console.log("copied");
+    var copyText = document.getElementById("myInput");
+    copyText.select();
+    document.execCommand("copy");
+    alert("Link copied to clipboard: " + copyText.value);
+  }
+  
+</script>
 {% endblock %}
