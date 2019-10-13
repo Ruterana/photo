@@ -2,15 +2,7 @@
 photo_gallery
 ## project Description
 this is app that designed to develop a personal gallery application <br>
-that will display a photos .when you click on one photo you will see all details about that photo.
-<!-- ##  Installation Requirements
-sudo apt-get update
-sudo apt-get install python3.6
-sudo apt-get install python3-pip
-sudo apt-get install python3.6-venv
-python3.6 -m venv virtual
-source virtual/bin/activate
-pip install -r requirements.txt -->
+that will display a photos .when you click on one photo you will see all details about that photo.and also<br> you see the link on that photo.
 ## Author's information
  am Niyitanga charlene,Am the one who developed this application.also am a student in moringa school. to know more contact me throught my email:ncharlene38@gmail.com. and contact me through my phone number:+250783853580. 
 
