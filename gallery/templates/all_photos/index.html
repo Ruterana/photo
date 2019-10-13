@@ -30,10 +30,11 @@
             <p>location:{{ pic.location }}</p>
             <p>category:{{ pic.category}}</p>
           </div>
-          <!-- The text field -->
-          <input type="link" value="http://127.0.0.1:8000/{{pic.image_path.url}}" id="myInput">
+          <!-- The link field -->
+          <input type="link" value="http://127.0.0.1:8000/{{pic.image_path.url}}" id="myInput"><br>
+          
 
-          <!-- The button used to copy the text -->
+          <!-- The button used to copy the link -->
           <button onclick="copyLink()">Copy link</button>
         </div>
       </div>

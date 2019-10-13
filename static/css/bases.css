@@ -6,10 +6,18 @@ h1
 .row{
   
   background-color:#839192    ;
+  
 }
 body{
-  background-color: black;
+  /* background-color: black; */
+  background-image: url("http://getwallpapers.com/wallpaper/full/7/c/9/1435739-best-hd-star-wallpaper-3564x2005-1080p.jpg"); 
+ background-repeat: no-repeat;
+ background-size:cover; 
 }
 modal-body{
   background-color: a#839192;
+}
+button{
+  color:#660000 ;
+  background-color: #660000;
 }
