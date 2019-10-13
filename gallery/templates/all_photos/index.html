@@ -31,8 +31,8 @@
             <p>category:{{ pic.category}}</p>
           </div>
           <!-- The link field -->
-          <input type="link" value="http://127.0.0.1:8000/{{pic.image_path.url}}" id="myInput"><br>
-          
+          <input type="link" value="http://127.0.0.1:8000/{{pic.image_path.url}}" id="link"><br>
+
 
           <!-- The button used to copy the link -->
           <button onclick="copyLink()">Copy link</button>
@@ -52,7 +52,7 @@
 <script>
   function copyLink(image_name) {
     console.log("copied");
-    var copyText = document.getElementById("myInput");
+    var copyText = document.getElementById("link");
     copyText.select();
     document.execCommand("copy");
     alert("Link copied to clipboard: " + copyText.value);

@@ -18,3 +18,7 @@ def search_results(request):
 def image(request):
         image = Image.objects.all()
         return render(request, 'all_photos/index.html',{"image":image})
+def filter_by_location(request,location_id):
+  image = Image.filter_by_location(id=location_id )
+  return render (request,"all_photos/location.html", {"image":image})
+
