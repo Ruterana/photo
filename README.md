@@ -7,10 +7,10 @@ that will display a photos .when you click on one photo you will see all details
  am Niyitanga charlene,Am the one who developed this application.also am a student in moringa school. to know more contact me throught my email:ncharlene38@gmail.com. and contact me through my phone number:+250783853580. 
 
  ## Technologies Used
-* BackEnd: 
+ BackEnd: 
 * Python 
 * Django
- * FontEnd: 
+  FontEnd: 
  * HTML
   * CSS  
   * Bootstrap
