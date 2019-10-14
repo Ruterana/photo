@@ -11,14 +11,14 @@
     <img style="width:300px; height: 300px;" src="{{pic.image_path.url}}" class="img-responsive" alt="Image" class="img-thumbnail photo"
       alt="Image" data-toggle="modal" data-target="#{{pic.id}}">
 
-    <!-- Image Details modal -->
+    Image Details modal
     <div class="modal fade" id="{{pic.id}}" tabindex="-1" role="dialog" aria-labelledby="imageTitle" aria-hidden="true">
       <div style="width:500px; height:500px; padding-top:100px;" class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h5 class="modal-name" id="imageTitle">{{pic.name}}</h5>
-            <!-- </button> -->
+           </button> 
           </div>
           <div class="modal-body">
             <h2> name:{{ pic.image_name }} </h2>
@@ -31,11 +31,10 @@
             <p>category:{{ pic.category}}</p>
           </div>
           <!-- The link field -->
-          <input type="link" value="http://127.0.0.1:8000/{{pic.image_path.url}}" id="link"><br>
+          <input type="link" value="http://127.0.0.1:8000{{pic.image_path.url}}" id="{{pic.id}}"><br>
 
 
-          <!-- The button used to copy the link -->
-          <button onclick="copyLink()">Copy link</button>
+          
         </div>
       </div>
     </div>
@@ -45,18 +44,18 @@
 
 
 
-  {%endfor%}
+   {%endfor%}
   
   
 </div>
 <script>
   function copyLink(image_name) {
     console.log("copied");
-    var copyLink = document.getElementById("link");
+    var copyLink = document.getElementById("pic.id");
     copyText.select();
     document.execCommand("copy");
     alert("Link copied to clipboard: " + copyText.value);
   }
   
 </script>
-{% endblock %}
+{% endblock %}  
